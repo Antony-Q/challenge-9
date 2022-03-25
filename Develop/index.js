@@ -10,8 +10,9 @@ const questions = () =>
         },
         {
             type:"",
-            
-        }
+            name:"",
+            message:""
+        },
 
 // TODO: Create a function to write README file
 function writeToFile(fileName, data) {}
