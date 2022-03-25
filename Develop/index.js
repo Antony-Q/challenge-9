@@ -11,7 +11,12 @@ const questions = () =>
         {
             type:"input",
             name:"author",
-            message:"What is the author's name?"
+            message:"Who are the authors?"
+        },
+        {
+            type:"input",
+            name:"contributing",
+            message:"Detail the contribution guidelines."
         },
         {
             type:"input",
@@ -25,24 +30,35 @@ const questions = () =>
         },
         {
             type:"input",
-            name:"",
-            message:""
+            name:"usage",
+            message:"Describe how this project may be used."
         },
         {
             type:"input",
-            name:"",
-            message:""
+            name:"license",
+            message:"Enter license information."
         },
         {
             type:"input",
-            name:"",
-            message:""
+            name:"tests",
+            message:"Detail the instructions for testing the program/project."
         },
         {
             type:"input",
-            name:"",
-            message:""
+            name:"questions",
+            message:"List frequently asked questions and their answers."
         },
+        {
+            type:"input",
+            name:"github",
+            message:"What is your Github username?"
+        },
+        {
+            type:"input",
+            name:"email",
+            message:"What is your email address?"
+        },
+    ]);
 
 // TODO: Create a function to write README file
 function writeToFile(fileName, data) {}
