@@ -83,7 +83,10 @@ function writeFile = data => {
 };
 
 // TODO: Create a function to initialize app
-function init() {}
-
-// Function call to initialize app
-init();
+questions()
+.then(answers => {
+    return generatePage(answers);
+})
+.then(data => {
+    return writeFile(data);
+})
