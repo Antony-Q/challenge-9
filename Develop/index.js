@@ -1,6 +1,7 @@
 // packages needed for this application
 const fs = require('fs');
 const inquirer = require('inquirer');
+const util = require('util');
 
 // Link to page where the README is created and stored
 const generatePage = require('./utils/generateMarkdown.js');
@@ -66,7 +67,20 @@ const questions = () => {
     ]);
 
 // TODO: Create a function to write README file
-function writeToFile(fileName, data) {}
+function writeFile = data => {
+    fs.writeFile(README.md, data, err => {
+
+        // Error contingency
+        if (err) {
+            console.log(err);
+            return;
+
+        // successful creation contingency
+        } else {
+            console.log("Your README has been successfully created.")
+        }
+    })
+};
 
 // TODO: Create a function to initialize app
 function init() {}
