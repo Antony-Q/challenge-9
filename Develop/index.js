@@ -65,10 +65,10 @@ const questions = () => {
             message:"What is your email address?"
         },
     ]);
-
-// TODO: Create a function to write README file
-function writeFile = data => {
-    fs.writeFile(README.md, data, err => {
+};
+// function to write README file
+const writeFile = data => {
+    fs.writeFile('README.md', data, err => {
 
         // Error contingency
         if (err) {
