@@ -69,7 +69,6 @@ const questions = () => {
 // function to write README file
 const writeFile = data => {
     fs.writeFile('README.md', data, err => {
-
         // Error contingency
         if (err) {
             console.log(err);
@@ -77,12 +76,12 @@ const writeFile = data => {
 
         // successful creation contingency
         } else {
-            console.log("Your README has been successfully created.")
+            console.log("Successfully created.")
         }
     })
 };
 
-// TODO: Create a function to initialize app
+// function to initialize app
 questions()
 .then(answers => {
     return generatePage(answers);
@@ -97,3 +96,6 @@ questions()
 .catch(err => {
     console.log(err)
 })
+
+// function call to initialize app
+init();
