@@ -1,10 +1,13 @@
-// TODO: Include packages needed for this application
+// packages needed for this application
 const fs = require('fs');
 const inquirer = require('inquirer');
 
-// TODO: Create an array of questions for user input
-const questions = () =>
-    inquirer.prompt([
+// Link to page where the README is created and stored
+const generatePage = require('./utils/generateMarkdown.js');
+
+// an array of questions for user input
+const questions = () => {
+    return inquirer.prompt([
         {
             type:"input",
             name:"title",
