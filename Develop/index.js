@@ -87,6 +87,16 @@ questions()
 .then(answers => {
     return generatePage(answers);
 })
+
+// display data on page
 .then(data => {
     return writeFile(data);
 })
+
+// error contingency
+.catch(err => {
+    console.log(err)
+})
+
+// Function call to initialize app
+init();
