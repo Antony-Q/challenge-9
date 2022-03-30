@@ -76,14 +76,6 @@ const questions = () => {
             name: "license",
             message: "Pick your License.",
             choices: ["MIT", "GPLv3", "GPL"],
-            validate: nameInput => {
-                if (nameInput) {
-                    return true;
-                } else {
-                    console.log('Please choose a license!');
-                    return false; 
-                }
-            }
         },
         {
             type:"input",
@@ -148,6 +140,3 @@ questions()
 .catch(err => {
     console.log(err)
 })
-
-// // function call to initialize app
-// init();

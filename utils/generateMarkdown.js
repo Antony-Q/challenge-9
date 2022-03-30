@@ -1,12 +1,24 @@
+function renderLicenseBadge(license) {
+  let licenseType = license.license;
+  let yourLicense = ''
+  if (licenseType === 'MIT') {
+    yourLicense = `![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)`
+  } else if (licenseType === 'GPLv3') {
+    yourLicense = `![GPLv3 license](https://img.shields.io/badge/License-GPLv3-blue.svg)`
+  } else if (licenseType === 'GPL') {
+    yourLicense = `![GPL license](https://img.shields.io/badge/License-GPL-blue.svg)`
+  } else {
+    license.license = "N/A"
+  }
+  return yourLicense;
+};
+
 const generateMarkdown = data => {
 
   return `# ${data.title}
 
-    ## license 
-    ${renderLicenseBadge(license)}
-    This project is license under ${data.license}
-
-    ![Github licence](http://img.shields.io/badge/license-${data.license}-blue.svg)
+    ## license
+    ${data.license}
   
     ## Description 
     ${data.description}
@@ -36,21 +48,7 @@ const generateMarkdown = data => {
     ## Questions
     If you have any questions about this project, please contact me directly at ${data.email}. You can view more of my projects at https://github.com/${data.github}.
   `;
-  function renderLicenseBadge(license) {
-    let licenseType = license.license;
-    let yourLicense = ''
-    if (licenseType === 'MIT') {
-      yourLicense = `![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)`
-    } else if (licenseType === 'GPLv3') {
-      yourLicense = `![GPLv3 license](https://img.shields.io/badge/License-GPLv3-blue.svg)`
-    } else if (licenseType === 'GPL') {
-      yourLicense = `![GPL license](https://img.shields.io/badge/License-GPL-blue.svg)`
-    } else {
-      license.license = "N/A"
-    }
-    return yourLicense;
-  };
-}
+};
 
 
 // use for importing Markdown in index 
