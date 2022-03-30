@@ -149,5 +149,5 @@ questions()
     console.log(err)
 })
 
-// function call to initialize app
-init();
+// // function call to initialize app
+// init();
