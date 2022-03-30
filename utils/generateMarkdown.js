@@ -18,7 +18,7 @@ const generateMarkdown = data => {
   return `# ${data.title}
 
     ## license
-    ${data.license}
+    This project is protected under the ${data.license} license.
   
     ## Description 
     ${data.description}
