@@ -16,8 +16,8 @@ const questions = () => {
         },
         {
             type:"input",
-            name:"author",
-            message:"Who are the authors?"
+            name:"contributors",
+            message:"Who are the contributors?"
         },
         {
             type:"input",
@@ -40,19 +40,15 @@ const questions = () => {
             message:"Describe how this project may be used."
         },
         {
-            type:"input",
-            name:"license",
-            message:"Enter license information."
+            type: "checkbox", 
+            name: "license",
+            choices: ["MIT", "GPLv3", "GPL"],
+            message: "Pick your License."
         },
         {
             type:"input",
             name:"tests",
             message:"Detail the instructions for testing the program/project."
-        },
-        {
-            type:"input",
-            name:"questions",
-            message:"List frequently asked questions and their answers."
         },
         {
             type:"input",
