@@ -12,7 +12,15 @@ const questions = () => {
         {
             type:"input",
             name:"title",
-            message:"What is the title of this project?"
+            message:"What is the title of this project?",
+            validate: nameInput => {
+                if (nameInput) {
+                    return true;
+                } else {
+                    console.log('Please enter your project name!');
+                    return false; 
+                }
+            }
         },
         {
             type:"input",
@@ -27,23 +35,55 @@ const questions = () => {
         {
             type:"input",
             name:"description",
-            message:"Give a brief description of the project."
+            message:"Give a brief description of the project.",
+            validate: nameInput => {
+                if (nameInput) {
+                    return true;
+                } else {
+                    console.log('Please enter a description of your project!');
+                    return false; 
+                }
+            }
         },
         {
             type:"input",
             name:"installation",
-            message:"Describe the installation instructions."
+            message:"Describe the installation instructions.",
+            validate: nameInput => {
+                if (nameInput) {
+                    return true;
+                } else {
+                    console.log('Please enter steps required to install your project!');
+                    return false; 
+                }
+            }
         },
         {
             type:"input",
             name:"usage",
-            message:"Describe how this project may be used."
+            message:"How is this app used?",
+            validate: nameInput => {
+                if (nameInput) {
+                    return true;
+                } else {
+                    console.log('Please enter a usage description!');
+                    return false; 
+                }
+            }
         },
         {
             type: "checkbox", 
             name: "license",
+            message: "Pick your License.",
             choices: ["MIT", "GPLv3", "GPL"],
-            message: "Pick your License."
+            validate: nameInput => {
+                if (nameInput) {
+                    return true;
+                } else {
+                    console.log('Please choose a license!');
+                    return false; 
+                }
+            }
         },
         {
             type:"input",
@@ -53,12 +93,28 @@ const questions = () => {
         {
             type:"input",
             name:"github",
-            message:"What is your Github username?"
+            message:"What is your Github username?",
+            validate: nameInput => {
+                if (nameInput) {
+                    return true;
+                } else {
+                    console.log('Please enter your GitHub username!');
+                    return false; 
+                }
+            }
         },
         {
             type:"input",
             name:"email",
-            message:"What is your email address?"
+            message:"What is your email address?",
+            validate: nameInput => {
+                if (nameInput) {
+                    return true;
+                } else {
+                    console.log('Please enter your email address!');
+                    return false; 
+                }
+            }
         },
     ]);
 };
