@@ -1,8 +1,14 @@
-// TODO: Include packages needed for this application
+// packages needed for this application
+const fs = require('fs');
+const inquirer = require('inquirer');
+const util = require('util');
 
-// TODO: Create an array of questions for user input
-const questions = () =>
-    inquirer.prompt([
+// Link to page where the README is created and stored
+const generatePage = require('./utils/generateMarkdown.js');
+
+// an array of questions for user input
+const questions = () => {
+    return inquirer.prompt([
         {
             type:"input",
             name:"title",
@@ -10,8 +16,8 @@ const questions = () =>
         },
         {
             type:"input",
-            name:"author",
-            message:"Who are the authors?"
+            name:"contributors",
+            message:"Who are the contributors?"
         },
         {
             type:"input",
@@ -34,19 +40,15 @@ const questions = () =>
             message:"Describe how this project may be used."
         },
         {
-            type:"input",
-            name:"license",
-            message:"Enter license information."
+            type: "checkbox", 
+            name: "license",
+            choices: ["MIT", "GPLv3", "GPL"],
+            message: "Pick your License."
         },
         {
             type:"input",
             name:"tests",
             message:"Detail the instructions for testing the program/project."
-        },
-        {
-            type:"input",
-            name:"questions",
-            message:"List frequently asked questions and their answers."
         },
         {
             type:"input",
@@ -59,12 +61,37 @@ const questions = () =>
             message:"What is your email address?"
         },
     ]);
+};
+// function to write README file
+const writeFile = data => {
+    fs.writeFile('README.md', data, err => {
+        // Error contingency
+        if (err) {
+            console.log(err);
+            return;
 
-// TODO: Create a function to write README file
-function writeToFile(fileName, data) {}
+        // successful creation contingency
+        } else {
+            console.log("Successfully created.")
+        }
+    })
+};
 
-// TODO: Create a function to initialize app
-function init() {}
+// function to initialize app
+questions()
+.then(answers => {
+    return generatePage(answers);
+})
 
-// Function call to initialize app
+// display data on page
+.then(data => {
+    return writeFile(data);
+})
+
+// error contingency
+.catch(err => {
+    console.log(err)
+})
+
+// function call to initialize app
 init();
